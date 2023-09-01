@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Q1."    function counter(){
+        var counter = 0;
+    
+        function IncreaseCounter() {
+            return counter += 1;
+        };
+    
+        return IncreaseCounter;
+    }
+    
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());"</h2>
+    <p id="q1"></p>
+    <h4><span>Reason:</span>By using string interpolation and template literals, the output of the counterFunction is displayed four times, and each time it's called, the counter increments by 1.</h4><br>
+    <h2>Q2. "let count = 0;
+        (function () {
+          if (count === 0) {
+            let count = 1;
+            console.log(count); // What is logged?
+          }
+          console.log(count); // What is logged?
+        })();"</h2>
+        <p id="q2"></p>
+        <h4><span>Reason:</span>This behavior is due to the concept of variable scope. The inner let count = 1; declaration creates a new variable with block scope that shadows the outer count variable within the if block. Outside the if block, the outer count variable is accessible and retains its original value.
+        </h4><br>
+        <h2>Q3. "for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+              console.log(i); // What is logged?
+            }, 1000);
+          }"</h2>
+          <p id="q3"></p>
+          <h4><span>Reason:</span>The loop iterates quickly and schedules three separate setTimeout calls to log the value of i. However, by the time the scheduled functions are executed after the 1-second delay, the loop has already finished executing and the value of i has become 3. Therefore, when the functions inside the setTimeout callbacks execute, they all log the value 3, which is the final value of i after the loop completes.</h4><br>
+          <h2>Q4. Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</h2>
+          <p id="q4"></p>
+          <h4><span>Reason:</span>we first call the outer function calculateRectangleArea with the length parameter to create a new function called calculateArea. This new function is customized to calculate the area of a rectangle with the specified length.Finally, we call calculateArea with the breadth parameter to calculate the area of the rectangle </h4><br>
+          <h2>Q5. Take a variable in outer function and create an inner function to increase the counter every time it is called</h2>
+          <p id="q5"></p>
+          <h4><span>Reason:</span>We first call createCounter() to obtain the incrementCounter function, which is the inner function.We then call the incrementCounter function multiple times (firstIncrement, secondIncrement, and thirdIncrement) to increase the counter value.</h4><br>
+          <h2>Q6. "Print Output
+
+            var a = 12;
+            (function () {
+              alert(a);
+            })();"</h2>
+            <p id="q6"></p>
+            <h4><span>Reason: </span>When I run this code in a web browser, it will immediately display an alert box with the value of a, which is 12. So, the expected output will be an alert with the message "12".</h4><br>
+
+            <h2>Q7."var a = 10;
+                var x = (function () {
+                  var a = 12;
+                  return function () {
+                    alert(a);
+                  };
+                })();
+                x();"</h2>
+                <p id="q7"></p>
+                <h4><span>Reason:</span>We define the variable a with a value of 10, just like the original code.We have an immediately invoked function expression (IIFE) that defines an inner a variable with a value of 12. Inside this IIFE, we get a reference to the HTML element with the ID "q7" and set its content to display the value of a using textContent.Finally, we call the x() function, which updates the content of the HTML element with the message "The value of 'a' is: 12."</h4><br>
+                <h2>Q8. "var globalVar = ""xyz"";
+
+                    (function outerFunc(outerArg) {
+                        var outerVar = 'a';
+                        
+                        (function innerFunc(innerArg) {
+                        var innerVar = 'b';
+                        
+                        console.log(
+                            ""outerArg = "" + outerArg + ""\n"" +
+                            ""innerArg = "" + innerArg + ""\n"" +
+                            ""outerVar = "" + outerVar + ""\n"" +
+                            ""innerVar = "" + innerVar + ""\n"" +
+                            ""globalVar = "" + globalVar);
+                        
+                        })(456);
+                    })(123);"</h2>
+                    <p id="q8"></p>
+                    <h4><span>Reason:</span> When I run this code, it provides a clear illustration of how variables are scoped and how closures work in JavaScript, showing that inner functions can access variables from their containing scopes.</h4>
+    <script src="./index.js"></script>
+</body>
+</html>
